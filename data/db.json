@@ -1,0 +1,335 @@
+{
+  "users": [
+    {
+      "id": "u-admin",
+      "email": "admin@puredrop.com",
+      "passwordHash": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": "u-agent1",
+      "email": "agent@puredrop.com",
+      "passwordHash": "agent123",
+      "role": "agent"
+    },
+    {
+      "id": "u-cust1",
+      "email": "anita@puredrop.com",
+      "passwordHash": "customer123",
+      "role": "customer"
+    },
+    {
+      "id": "u-cust2",
+      "email": "pastry@puredrop.com",
+      "passwordHash": "customer123",
+      "role": "customer"
+    }
+  ],
+  "customers": [
+    {
+      "id": "c-cust1",
+      "userId": "u-cust1",
+      "name": "Anita Sharma",
+      "phone": "+91 98765 43210",
+      "address": "B-402, Sunset Heights, Green Meadows, CA 90210",
+      "lat": 34.0736204,
+      "lng": -118.4003563,
+      "walletBalance": 2380,
+      "status": "active"
+    },
+    {
+      "id": "c-cust2",
+      "userId": "u-cust2",
+      "name": "Chef Elena Rodriguez",
+      "phone": "+91 99999 88888",
+      "address": "Hyatt Pastry Section, Suite 101, Pasture Lane, CA 90210",
+      "lat": 34.0782312,
+      "lng": -118.4048991,
+      "walletBalance": 12050,
+      "status": "active"
+    }
+  ],
+  "deliveryAgents": [
+    {
+      "id": "a-agent1",
+      "userId": "u-agent1",
+      "name": "Ramesh Kumar",
+      "phone": "+91 91234 56789",
+      "vehicleInfo": "E-Loader Truck (Electric) - DL3C-1234",
+      "status": "active"
+    }
+  ],
+  "cattle": [
+    {
+      "id": "cat-1",
+      "tagNumber": "PD-COW-001",
+      "cattleType": "cow",
+      "breed": "Holstein Friesian",
+      "dob": "2021-04-12",
+      "status": "milking",
+      "avgDailyYield": 24.5
+    },
+    {
+      "id": "cat-2",
+      "tagNumber": "PD-COW-002",
+      "cattleType": "cow",
+      "breed": "Jersey",
+      "dob": "2022-01-18",
+      "status": "milking",
+      "avgDailyYield": 18.2
+    },
+    {
+      "id": "cat-3",
+      "tagNumber": "PD-BUF-001",
+      "cattleType": "buffalo",
+      "breed": "Murrah",
+      "dob": "2020-08-05",
+      "status": "milking",
+      "avgDailyYield": 14.8
+    },
+    {
+      "id": "cat-4",
+      "tagNumber": "PD-BUF-002",
+      "cattleType": "buffalo",
+      "breed": "Nili-Ravi",
+      "dob": "2021-11-22",
+      "status": "dry",
+      "avgDailyYield": 0
+    },
+    {
+      "id": "cat-5",
+      "tagNumber": "PD-COW-003",
+      "cattleType": "cow",
+      "breed": "Gir",
+      "dob": "2023-02-10",
+      "status": "pregnant",
+      "avgDailyYield": 0
+    }
+  ],
+  "milkPricing": [
+    {
+      "id": "p-cow",
+      "cattleType": "cow",
+      "basePricePerLiter": 70
+    },
+    {
+      "id": "p-buf",
+      "cattleType": "buffalo",
+      "basePricePerLiter": 90
+    }
+  ],
+  "milkTracking": [
+    {
+      "id": "mt-1",
+      "cattleId": "cat-1",
+      "date": "2026-06-03",
+      "shift": "morning",
+      "yieldLiters": 12.5,
+      "fatPercentage": 3.8,
+      "snfPercentage": 8.5
+    },
+    {
+      "id": "mt-2",
+      "cattleId": "cat-1",
+      "date": "2026-06-03",
+      "shift": "evening",
+      "yieldLiters": 11.8,
+      "fatPercentage": 3.9,
+      "snfPercentage": 8.6
+    },
+    {
+      "id": "mt-3",
+      "cattleId": "cat-2",
+      "date": "2026-06-03",
+      "shift": "morning",
+      "yieldLiters": 9,
+      "fatPercentage": 4.8,
+      "snfPercentage": 9.1
+    },
+    {
+      "id": "mt-4",
+      "cattleId": "cat-2",
+      "date": "2026-06-03",
+      "shift": "evening",
+      "yieldLiters": 8.5,
+      "fatPercentage": 4.9,
+      "snfPercentage": 9.2
+    },
+    {
+      "id": "mt-5",
+      "cattleId": "cat-3",
+      "date": "2026-06-03",
+      "shift": "morning",
+      "yieldLiters": 7.2,
+      "fatPercentage": 6.8,
+      "snfPercentage": 9.8
+    },
+    {
+      "id": "mt-6",
+      "cattleId": "cat-3",
+      "date": "2026-06-03",
+      "shift": "evening",
+      "yieldLiters": 7,
+      "fatPercentage": 7,
+      "snfPercentage": 10
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "sub-1",
+      "customerId": "c-cust1",
+      "milkType": "cow",
+      "quantityLiters": 2,
+      "shift": "both",
+      "frequency": "daily",
+      "startDate": "2026-06-03",
+      "status": "active"
+    },
+    {
+      "id": "sub-2",
+      "customerId": "c-cust2",
+      "milkType": "buffalo",
+      "quantityLiters": 10,
+      "shift": "morning",
+      "frequency": "daily",
+      "startDate": "2026-06-03",
+      "status": "active"
+    }
+  ],
+  "deliveries": [
+    {
+      "id": "del-1-y-m",
+      "subscriptionId": "sub-1",
+      "agentId": "a-agent1",
+      "deliveryDate": "2026-06-03",
+      "shift": "morning",
+      "quantityDelivered": 1,
+      "status": "delivered"
+    },
+    {
+      "id": "del-1-y-e",
+      "subscriptionId": "sub-1",
+      "agentId": "a-agent1",
+      "deliveryDate": "2026-06-03",
+      "shift": "evening",
+      "quantityDelivered": 1,
+      "status": "delivered"
+    },
+    {
+      "id": "del-2-y-m",
+      "subscriptionId": "sub-2",
+      "agentId": "a-agent1",
+      "deliveryDate": "2026-06-03",
+      "shift": "morning",
+      "quantityDelivered": 10,
+      "status": "delivered"
+    },
+    {
+      "id": "del-1-t-m",
+      "subscriptionId": "sub-1",
+      "agentId": "a-agent1",
+      "deliveryDate": "2026-06-04",
+      "shift": "morning",
+      "quantityDelivered": 1,
+      "status": "delivered"
+    },
+    {
+      "id": "del-1-t-e",
+      "subscriptionId": "sub-1",
+      "agentId": "a-agent1",
+      "deliveryDate": "2026-06-04",
+      "shift": "evening",
+      "quantityDelivered": 1,
+      "status": "pending"
+    },
+    {
+      "id": "del-2-t-m",
+      "subscriptionId": "sub-2",
+      "agentId": "a-agent1",
+      "deliveryDate": "2026-06-04",
+      "shift": "morning",
+      "quantityDelivered": 10,
+      "status": "pending"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "tx-1",
+      "customerId": "c-cust1",
+      "amount": 2500,
+      "type": "deposit",
+      "description": "Initial wallet recharge (Online GPay)",
+      "createdAt": "2026-06-02T17:54:08.990Z"
+    },
+    {
+      "id": "tx-2",
+      "customerId": "c-cust2",
+      "amount": 13000,
+      "type": "deposit",
+      "description": "Initial bank transfer deposit",
+      "createdAt": "2026-06-02T17:54:08.990Z"
+    },
+    {
+      "id": "tx-3",
+      "customerId": "c-cust1",
+      "amount": -70,
+      "type": "delivery_charge",
+      "description": "Deduction for 1L Cow Milk (Morning Shift)",
+      "referenceId": "del-1-y-m",
+      "createdAt": "2026-06-03T07:15:00.000Z"
+    },
+    {
+      "id": "tx-4",
+      "customerId": "c-cust1",
+      "amount": -70,
+      "type": "delivery_charge",
+      "description": "Deduction for 1L Cow Milk (Evening Shift)",
+      "referenceId": "del-1-y-e",
+      "createdAt": "2026-06-03T18:30:00.000Z"
+    },
+    {
+      "id": "tx-5",
+      "customerId": "c-cust2",
+      "amount": -900,
+      "type": "delivery_charge",
+      "description": "Deduction for 10L Buffalo Milk (Morning Shift)",
+      "referenceId": "del-2-y-m",
+      "createdAt": "2026-06-03T06:45:00.000Z"
+    },
+    {
+      "id": "tx-1780595836524",
+      "customerId": "c-cust1",
+      "amount": -70,
+      "type": "delivery_charge",
+      "description": "Deducted for 1L Cow Milk (Morning Shift)",
+      "referenceId": "del-1-t-m",
+      "createdAt": "2026-06-04T17:57:16.524Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg-1",
+      "name": "Rohan Khanna",
+      "email": "rohan@gmail.com",
+      "phone": "+91 98989 89898",
+      "message": "Hi, I would like to subscribe for 2 liters of buffalo milk from next Monday. Please share subscription details.",
+      "status": "unread",
+      "createdAt": "2026-06-03T17:54:08.990Z"
+    },
+    {
+      "id": "msg-2",
+      "name": "Grand Hyatt Procurement",
+      "email": "procurement.hyatt@hyatt.com",
+      "message": "Need to verify if your organic milk certifications are renewed for 2026. Please email updated copy of USDA organic cert.",
+      "status": "unread",
+      "createdAt": "2026-06-04T05:54:08.990Z"
+    }
+  ],
+  "notes": [
+    {
+      "id": "note-1",
+      "content": "Daily Checklist:\n1. Verify cold chain storage matches < 4°C at delivery dispatch.\n2. Review Ramesh (agent) fuel reports for vehicle DL3C-1234.\n3. Add new Buffalo tags to system.\nwhat is this testing ",
+      "updatedAt": "2026-06-04T17:54:28.418Z"
+    }
+  ]
+}
