@@ -26,15 +26,20 @@ export function Hero() {
         style={{ scale, y }}
         className="absolute inset-0 h-full w-full"
       >
-        {/* YouTube iframe (autoplay, mute, loop, no controls) */}
+        {/* YouTube iframe — all controls, branding, and UI suppressed */}
         {mounted && (
-          <iframe
-            className="pointer-events-none absolute left-1/2 top-1/2 h-[120vh] w-[220vw] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-70"
-            src={`https://www.youtube.com/embed/${YT_VIDEO_ID}?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&playlist=${YT_VIDEO_ID}`}
-            title="Pure Drop Farm"
-            allow="autoplay; encrypted-media"
-            loading="lazy"
-          />
+          <div className="pointer-events-none absolute inset-0">
+            <iframe
+              className="absolute left-1/2 top-1/2 h-[140vh] w-[250vw] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-70"
+              src={`https://www.youtube.com/embed/${YT_VIDEO_ID}?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&fs=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&iv_load_policy=3&cc_load_policy=0&playlist=${YT_VIDEO_ID}&enablejsapi=0&color=white&origin=${encodeURIComponent("https://puredrop-web.vercel.app")}`}
+              title="Pure Drop Farm"
+              allow="autoplay; encrypted-media"
+              loading="lazy"
+              style={{ border: 0 }}
+            />
+            {/* Transparent overlay — blocks any YouTube UI clicks / hover states */}
+            <div className="absolute inset-0 z-10" />
+          </div>
         )}
         {/* Fallback image */}
         <img
