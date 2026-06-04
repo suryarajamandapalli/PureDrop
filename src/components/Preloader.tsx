@@ -12,7 +12,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
   useEffect(() => {
     let raf: number;
     const start = performance.now();
-    const duration = 3000;
+    const duration = 1400;
     const tick = (t: number) => {
       const p = Math.min(100, ((t - start) / duration) * 100);
       setProgress(p);
@@ -131,23 +131,6 @@ export function Preloader({ onComplete }: PreloaderProps) {
             </p>
           </motion.div>
 
-          {/* Progress loader */}
-          <motion.div
-            className="mt-10 w-64"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.0 }}
-          >
-            <div className="h-px w-full overflow-hidden bg-cream/10">
-              <motion.div
-                className="h-full bg-cream"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-            <p className="mt-3 text-center font-mono text-[9px] tracking-widest text-cream/60">
-              {Math.round(progress).toString().padStart(3, "0")}%
-            </p>
-          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
