@@ -28,13 +28,13 @@ export function Navbar() {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 z-40 w-full transition-all duration-300 ${
         scrolled
-          ? "border-b border-navy/5 bg-cream/85 backdrop-blur-md"
-          : "bg-transparent"
+          ? "border-b border-navy/5 bg-cream/85 backdrop-blur-md shadow-sm"
+          : "bg-gradient-to-b from-navy/50 to-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-2">
-          <span className="font-serif text-2xl font-medium tracking-tight text-navy">
+          <span className={`font-serif text-2xl font-medium tracking-tight transition-colors duration-300 ${scrolled ? "text-navy" : "text-cream"}`}>
             Pure Drop
           </span>
         </Link>
@@ -46,15 +46,17 @@ export function Navbar() {
               <Link
                 key={l.to}
                 to={l.to}
-                className={`relative text-sm font-medium transition-colors ${
-                  active ? "text-navy" : "text-navy/60 hover:text-navy"
+                className={`relative text-sm font-medium transition-colors duration-300 ${
+                  active 
+                    ? (scrolled ? "text-navy" : "text-cream") 
+                    : (scrolled ? "text-navy/60 hover:text-navy" : "text-cream/70 hover:text-cream")
                 }`}
               >
                 {l.label}
                 {active && (
                   <motion.span
                     layoutId="nav-underline"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-yellow"
+                    className={`absolute -bottom-1 left-0 right-0 h-0.5 ${scrolled ? "bg-navy" : "bg-cream"}`}
                   />
                 )}
               </Link>
@@ -62,14 +64,18 @@ export function Navbar() {
           })}
           <Link
             to="/contact"
-            className="h-9 rounded-full bg-navy px-5 text-sm font-medium text-cream transition-transform hover:scale-[1.03] active:scale-95 inline-flex items-center"
+            className={`h-9 rounded-full px-5 text-sm font-medium transition-all duration-300 hover:scale-[1.03] active:scale-95 inline-flex items-center ${
+              scrolled ? "bg-navy text-cream" : "bg-cream text-navy hover:bg-cream/90"
+            }`}
           >
             Order Milk
           </Link>
         </div>
 
         <button
-          className="flex size-10 items-center justify-center rounded-full bg-navy/5 text-navy md:hidden"
+          className={`flex size-10 items-center justify-center rounded-full transition-colors duration-300 md:hidden ${
+            scrolled ? "bg-navy/5 text-navy" : "bg-cream/10 text-cream"
+          }`}
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
